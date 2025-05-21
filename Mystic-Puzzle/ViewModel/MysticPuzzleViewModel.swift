@@ -12,15 +12,15 @@ var audioPlayer: AVAudioPlayer? = AVAudioPlayer()
 
 
 @Observable
-class MysticPuzzleViewModel: ObservableObject {
+class MysticPuzzleViewModel {
     var mysticPuzzleModel: MysticPuzzleModel = MysticPuzzleModel(tiles: [], n: 0) {
         didSet {
             saveItems()
         }
     }
     
-    
     let itemsKey = "Tile list"
+    
     init() {
         guard
             let data = UserDefaults.standard.data(forKey: itemsKey),
